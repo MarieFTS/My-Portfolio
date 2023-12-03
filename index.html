@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Portfolio</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/80b80b3f8b.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div id="header">
+            <div class="parallax">
+             <div class="container">
+            <nav>
+                <img src="Images /logo2.png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#Portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-solid fa-x" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Data Analyst</p>
+                <h1>Hi, I'm <span> Marie </span> <br> Welcome to my Portfolio</h1>
+            </div>
+        </div>
+        </div>
+        <!-----about me page -------->
+        <div id="about">
+            <div class="parallax">
+            <div class="container">
+                <div class="row">
+                    <div class="about-col-1">
+                        <img src="Images /IMG_3726.png">
+                    </div>
+                    <div class="about-col-2">
+                        <h1>About Me</h1>
+                        <p> Motivated IT student with a specialization in data analysis, 
+                            seeking an internship opportunity as an IT Intern within tech companies. 
+                        </p>
+                        
+                      <div class="tab-titles">
+                            <P class="tab-links active-link" onclick="opentab('skills')">Skill</P>
+                            <P class="tab-links" onclick="opentab('experience')">Experience</P>
+                            <P class="tab-links" onclick="opentab('education')">Education</P>
+                        </div>
+                        <div class="tab-contents active-tab" id="skills">
+                            <ul>
+                                <li><span>Data Analysis</span><br>Working with SQL, Excel and Python</li>
+                                <li><span>Data Visualisation</span><br>Working with Tableau and Java</li>
+                                <li><span>Project Management</span><br>Comfortable with Microsoft office,<br>Good communication skills and Problem sloving skills</li>
+                                <li><span>Languages</span><br>Fluent in French and English</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="experience">
+                            <ul>
+                                <li><span>English Tutor</span><br>Tutored students in English language skills,<br> including reading, writing, and speaking. 
+                                <br>mproved students' English proficiency and comprehension through one-on-one instruction.</li>
+                                <li><span>Orientation Leader</span><br>Facilitated orientation sessions for incoming students to help them acclimate to campus life.
+                                <br> Hence devoloping both leader and communication skills while creating a bond</li>
+        
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="education">
+                            <ul>
+                                <li><span>2020-2022</span><br>Middlesex Community College,<br> Lowell MA — Associates of Science in Computer Science </li>
+                                <li><span>2022-2024</span><br>Kennesaw State University,<br> Marietta GA — Bachelor of Science in Information Technology </li>
+                                <li><span>Relevant course work</span><br>- Data Analysis and Visualization
+                                    <br>- Database Management
+                                    <br>- Statistics for Data Science
+                                    <br>- Python Programming
+                                    <br>- SQL
+                                    
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        </div>
+ <!--Portfolio page-->
+ <div id="Portfolio">
+    <div class="parallax">
+    <div class="container">
+        <h1 > My Work </h1>
+        <div class="workList">
+            <div class="work">
+                <img src="Images /SQLlogo.png">
+                <div class="layer">
+                    <h3>SQL, Employee Data Analysis systems</h3>
+                    <p>This project involved designing and implementing a database
+                         system </p>
+                         <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="Images /Javalogo.png">
+                <div class="layer">
+                    <h3>Java , Data Analysis tool</h3>
+                    <p>Created a Java program that allows users to perform basic data analysis tasks on a dataset. </p>
+                         <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="Images /Pythonlogo.png">
+                <div class="layer">
+                    <h3>Python, Analyzing covid 19 Data. </h3>
+                    <p>The goal is to practice data manipulation, visualization, and analysis using Python libraries. </p>
+                         <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+             
+            <div class="work">
+                <img src="Images /excellogo.png">
+                <div class="layer">
+                    <h3>Excel, Buisness Requirement. </h3>
+                    <p>The goal is to practice data exploration, transfering data into excel, and Analysation. </p>
+                         <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="Images /Tableaulogo.png">
+                <div class="layer">
+                    <h3>Tableau, Social Media Engagement Dashboard. </h3>
+                    <p>TIntegrate data from social media platforms to analyze engagement metrics.
+                        Create visualizations for likes, shares, comments, and follower growth. </p>
+                         <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+
+                
+        <a href="#"class="button">See more</a>
+    </div>
+ </div>
+ </div>
+
+       
+<!--------------Contact ------------>
+<div id="contact">
+    <div class="parallax">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1>Contact Me</h1>
+                <p><i class="fa-regular fa-envelope"></i>Marieodilefotsoo@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i> 6174618675</p>
+                <div class="social-icon">
+                    <a href="https://facebook.com"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://twitter.com"><i class="fa-brands fa-twitter-square"></i></a>
+                    <a href="https://instagram.com"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://linkedin.com/in/marie-fotso-5b75a31a0"><i class="fa-brands fa-linkedin"></i></a>
+                
+                </div>
+                <a href="Images /Resume...docx" download class="button button2">Download Resume</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="button button2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>            
+    <div class="copyright">
+        <p>Copyright © <i class="fa-solid fa-m fa-flip"></i>arie. MadeByMarie ClassProject</p>
+    </div>
+</div>
+</div>
+        
+<script>
+   var tablinks = document.getElementsByClassName("tab-links");
+   var tabcontents = document.getElementsByClassName("tab-contents");
+
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+         }
+         event.currentTarget.classList.add("active-link")
+         document.getElementById(tabname).classList.add("active-tab")
+     }
+          
+</script>
+<script>
+    var sidemeu = document.getElementById("sidemenu")
+    function openmenu(){
+        sidemeu.style.right = "0"
+    }
+    function closemenu(){
+        sidemeu.style.right = "-200px"
+    }
+</script>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwjVzkc_1pY3g0kPbZc2t-glffBgyn72iVdoXAdGQBAyV9-zT3d354U0qcKMnSPJL_N/exec';
+    const form = document.forms['submit-to-google-sheet'];
+    const msg = document.getElementById("msg");
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        try {
+            const response = await fetch(scriptURL, { method: 'POST', body: new FormData(form) });
+            if (response.ok) {
+                msg.innerHTML = "Message sent successfully";
+                setTimeout(() => {
+                    msg.innerHTML = "";
+                }, 5000);
+                form.reset();
+            } else {
+                throw new Error('Network response was not ok.');
+            }
+        } catch (error) {
+            console.error('Error!', error.message);
+            msg.innerHTML = "Error submitting the form. Please try again later.";
+        }
+    });
+</script>
+
+
+</body>
+</html>
