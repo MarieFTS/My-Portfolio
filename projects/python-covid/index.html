@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID-19 Data Analysis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <link rel="stylesheet" href="../../project.css">
+    <script src="https://kit.fontawesome.com/80b80b3f8b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Sticky Navigation -->
+    <nav class="sticky-nav">
+        <div class="nav-container">
+            <a href="../../index.html" class="nav-back">
+                <i class="fas fa-arrow-left"></i> Back to Portfolio
+            </a>
+        </div>
+    </nav>
+
+    <!-- Project Hero -->
+    <section class="project-hero">
+        <div class="container">
+            <div class="hero-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Pandas</span>
+                <span class="tag">Data Visualization</span>
+            </div>
+            <h1 class="hero-title">COVID-19 Data Analysis</h1>
+            <p class="hero-subtitle">Analyzed global COVID-19 trends including case counts, death rates, vaccination coverage, and regional patterns using Python data science libraries. Dataset from Our World in Data (OWID).</p>
+            <div class="hero-meta">
+                <span><i class="fas fa-calendar"></i> Academic Project</span>
+                <span><i class="fas fa-user"></i> Individual Project</span>
+                <span><i class="fas fa-python"></i> Python</span>
+                <span><i class="fas fa-chart-area"></i> 4 Visualizations</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="container main-layout">
+        <!-- Main Content -->
+        <main class="project-content">
+            <!-- Overview Section -->
+            <section class="content-section">
+                <h2>Overview</h2>
+                <p>This comprehensive data analysis project examined global COVID-19 trends across 200+ countries using Python data science tools. Through careful data cleaning, feature engineering, and visualization, we discovered meaningful patterns in case fatality rates, vaccination effectiveness, and regional pandemic response. The analysis revealed a strong negative correlation between vaccination rates and case fatality rates, validating vaccine efficacy across diverse populations.</p>
+            </section>
+
+            <!-- Process Steps -->
+            <section class="content-section">
+                <h2>Process & Methodology</h2>
+                <div class="process-grid">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h3>Data Loading</h3>
+                        <p>Loaded OWID COVID CSV with 200+ countries and 60+ columns using Pandas read_csv().</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h3>Data Cleaning</h3>
+                        <p>Removed aggregate rows (continents/World), filled missing values, selected 15 key columns.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h3>Feature Engineering</h3>
+                        <p>Computed case fatality rate, cases per million, vaccination rate, and 7-day rolling averages.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <h3>Global Summary</h3>
+                        <p>Printed aggregate statistics: total cases, deaths, vaccinated count, and overall CFR.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">5</div>
+                        <h3>Visualizations</h3>
+                        <p>Generated 4 charts: Top 10 countries, global trend, vaccination vs CFR scatter, continent heatmap.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">6</div>
+                        <h3>Insights & Reporting</h3>
+                        <p>Found negative correlation between vaccination rate and case fatality rate; documented findings.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Code Preview -->
+            <section class="content-section">
+                <h2>Feature Engineering & Metrics</h2>
+                <div class="code-preview">
+                    <div class="code-header">
+                        <span class="code-label">Python</span>
+                        <button class="copy-btn" data-target="code-1">
+                            <i class="fas fa-copy"></i> Copy
+                        </button>
+                    </div>
+                    <pre id="code-1"><code class="language-python"># 7-day rolling average & derived metrics
+df['case_fatality_rate'] = np.where(
+    df['total_cases'] > 0,
+    (df['total_deaths'] / df['total_cases']) * 100, 0
+)
+df['vax_rate'] = np.where(
+    df['population'] > 0,
+    (df['people_fully_vaccinated'] / df['population']) * 100, 0
+)
+df['7day_avg_cases'] = (
+    df.groupby('location')['new_cases']
+      .transform(lambda x: x.rolling(7, min_periods=1).mean())
+)</code></pre>
+                </div>
+            </section>
+
+            <!-- Key Results -->
+            <section class="content-section">
+                <h2>Key Results</h2>
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-number">200+</div>
+                        <div class="result-label">Countries Analyzed</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-number">4</div>
+                        <div class="result-label">Charts Generated</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-number">-0.78</div>
+                        <div class="result-label">Correlation (Vax vs CFR)</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-number">7</div>
+                        <div class="result-label">Day Rolling Averages</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Sidebar -->
+        <aside class="project-sidebar">
+            <div class="sidebar-section">
+                <h3>Tech Stack</h3>
+                <ul class="tech-list">
+                    <li><i class="fas fa-tag"></i> Python 3</li>
+                    <li><i class="fas fa-tag"></i> Pandas</li>
+                    <li><i class="fas fa-tag"></i> NumPy</li>
+                    <li><i class="fas fa-tag"></i> Matplotlib</li>
+                    <li><i class="fas fa-tag"></i> Seaborn</li>
+                    <li><i class="fas fa-tag"></i> Jupyter Notebook</li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>Project Files</h3>
+                <a href="covid_analysis.py" download class="github-btn">
+                    <i class="fas fa-download"></i> Download Python
+                </a>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>GitHub</h3>
+                <a href="https://github.com/MarieFTS" target="_blank" class="github-btn">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
+            </div>
+
+            <div class="sidebar-section">
+                <a href="../../index.html" class="back-portfolio-btn">
+                    <i class="fas fa-arrow-left"></i> Back to Portfolio
+                </a>
+            </div>
+        </aside>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+
+        // Copy button functionality
+        document.querySelectorAll('.copy-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const codeId = this.getAttribute('data-target');
+                const codeElement = document.getElementById(codeId);
+                const text = codeElement.innerText;
+
+                navigator.clipboard.writeText(text).then(() => {
+                    const originalText = this.innerHTML;
+                    this.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                    this.classList.add('copied');
+
+                    setTimeout(() => {
+                        this.innerHTML = originalText;
+                        this.classList.remove('copied');
+                    }, 2000);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

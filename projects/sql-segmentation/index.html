@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Customer Segmentation Analysis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <link rel="stylesheet" href="../../project.css">
+    <script src="https://kit.fontawesome.com/80b80b3f8b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Sticky Navigation -->
+    <nav class="sticky-nav">
+        <div class="nav-container">
+            <a href="../../index.html" class="nav-back">
+                <i class="fas fa-arrow-left"></i> Back to Portfolio
+            </a>
+        </div>
+    </nav>
+
+    <!-- Project Hero -->
+    <section class="project-hero">
+        <div class="container">
+            <div class="hero-tags">
+                <span class="tag">SQL</span>
+                <span class="tag">MySQL</span>
+                <span class="tag">Data Analysis</span>
+            </div>
+            <h1 class="hero-title">SQL Customer Segmentation Analysis</h1>
+            <p class="hero-subtitle">Led a team project analyzing retail customer data using RFM (Recency, Frequency, Monetary) analysis to identify 7 distinct customer segments and drive targeted marketing strategies.</p>
+            <div class="hero-meta">
+                <span><i class="fas fa-calendar"></i> Jan 2023 – May 2023</span>
+                <span><i class="fas fa-users"></i> Team Project</span>
+                <span><i class="fas fa-database"></i> MySQL</span>
+                <span><i class="fas fa-code"></i> 8 Queries</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="container main-layout">
+        <!-- Main Content -->
+        <main class="project-content">
+            <!-- Overview Section -->
+            <section class="content-section">
+                <h2>Overview</h2>
+                <p>This team project focused on leveraging SQL and advanced data analysis techniques to understand customer behavior patterns. Using RFM analysis—a proven retail analytics methodology—we segmented customers into 7 distinct groups, enabling data-driven marketing strategies that resulted in a 40% revenue concentration in our Champions segment.</p>
+            </section>
+
+            <!-- Process Steps -->
+            <section class="content-section">
+                <h2>Process & Methodology</h2>
+                <div class="process-grid">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h3>Database Design</h3>
+                        <p>Created customers and orders tables with proper foreign keys and indexing for optimal query performance.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h3>RFM Calculation</h3>
+                        <p>Computed recency days, frequency, and monetary value per customer using date functions and aggregations.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h3>RFM Scoring</h3>
+                        <p>Scored each metric 1–5 using CASE statements and percentile ranking across the customer base.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <h3>Segmentation</h3>
+                        <p>Mapped RFM combinations to 7 segments: Champions, Loyal, At Risk, Can't Lose, New, Promising, and Lost.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">5</div>
+                        <h3>Demographics Breakdown</h3>
+                        <p>Analyzed age groups, gender, and geography distribution within each segment.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">6</div>
+                        <h3>Category Preferences</h3>
+                        <p>Identified which product categories each segment prefers for targeted cross-selling.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Code Preview -->
+            <section class="content-section">
+                <h2>RFM Scoring Implementation</h2>
+                <div class="code-preview">
+                    <div class="code-header">
+                        <span class="code-label">SQL</span>
+                        <button class="copy-btn" data-target="code-1">
+                            <i class="fas fa-copy"></i> Copy
+                        </button>
+                    </div>
+                    <pre id="code-1"><code class="language-sql">-- RFM Scoring View
+CREATE OR REPLACE VIEW rfm_scores AS
+SELECT *,
+    CASE
+        WHEN recency_days <= 30  THEN 5
+        WHEN recency_days <= 60  THEN 4
+        WHEN recency_days <= 120 THEN 3
+        WHEN recency_days <= 180 THEN 2
+        ELSE 1
+    END AS recency_score,
+    CASE
+        WHEN frequency >= 20 THEN 5
+        WHEN frequency >= 12 THEN 4
+        WHEN frequency >= 6  THEN 3
+        WHEN frequency >= 2  THEN 2
+        ELSE 1
+    END AS frequency_score,
+    CASE
+        WHEN monetary_value >= 5000 THEN 5
+        WHEN monetary_value >= 2000 THEN 4
+        WHEN monetary_value >= 800  THEN 3
+        WHEN monetary_value >= 200  THEN 2
+        ELSE 1
+    END AS monetary_score
+FROM rfm_raw;</code></pre>
+                </div>
+            </section>
+
+            <!-- Key Results -->
+            <section class="content-section">
+                <h2>Key Results</h2>
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-number">7</div>
+                        <div class="result-label">Segments Identified</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-number">3</div>
+                        <div class="result-label">SQL Views Created</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-number">40%</div>
+                        <div class="result-label">Revenue from Champions</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-number">8</div>
+                        <div class="result-label">Complex Queries</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Sidebar -->
+        <aside class="project-sidebar">
+            <div class="sidebar-section">
+                <h3>Tech Stack</h3>
+                <ul class="tech-list">
+                    <li><i class="fas fa-tag"></i> MySQL</li>
+                    <li><i class="fas fa-tag"></i> SQL Joins</li>
+                    <li><i class="fas fa-tag"></i> CASE Statements</li>
+                    <li><i class="fas fa-tag"></i> CTEs</li>
+                    <li><i class="fas fa-tag"></i> Window Functions</li>
+                    <li><i class="fas fa-tag"></i> GROUP BY</li>
+                    <li><i class="fas fa-tag"></i> Views</li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>Project Files</h3>
+                <a href="customer_segmentation.sql" download class="github-btn">
+                    <i class="fas fa-download"></i> Download SQL
+                </a>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>GitHub</h3>
+                <a href="https://github.com/MarieFTS" target="_blank" class="github-btn">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
+            </div>
+
+            <div class="sidebar-section">
+                <a href="../../index.html" class="back-portfolio-btn">
+                    <i class="fas fa-arrow-left"></i> Back to Portfolio
+                </a>
+            </div>
+        </aside>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+
+        // Copy button functionality
+        document.querySelectorAll('.copy-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const codeId = this.getAttribute('data-target');
+                const codeElement = document.getElementById(codeId);
+                const text = codeElement.innerText;
+
+                navigator.clipboard.writeText(text).then(() => {
+                    const originalText = this.innerHTML;
+                    this.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                    this.classList.add('copied');
+
+                    setTimeout(() => {
+                        this.innerHTML = originalText;
+                        this.classList.remove('copied');
+                    }, 2000);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

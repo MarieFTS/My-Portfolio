@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraud Detection Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <link rel="stylesheet" href="../../project.css">
+    <script src="https://kit.fontawesome.com/80b80b3f8b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Sticky Navigation -->
+    <nav class="sticky-nav">
+        <div class="nav-container">
+            <a href="../../index.html" class="nav-back">
+                <i class="fas fa-arrow-left"></i> Back to Portfolio
+            </a>
+        </div>
+    </nav>
+
+    <!-- Project Hero -->
+    <section class="project-hero">
+        <div class="container">
+            <div class="hero-tags">
+                <span class="tag">Tableau</span>
+                <span class="tag">SQL</span>
+                <span class="tag">Data Visualization</span>
+            </div>
+            <h1 class="hero-title">Fraud Detection Dashboard</h1>
+            <p class="hero-subtitle">Designed and implemented an interactive fraud detection dashboard integrating multi-source transaction data. Created visualizations to monitor patterns, detect anomalies, and flag suspicious transactions in real time.</p>
+            <div class="hero-meta">
+                <span><i class="fas fa-calendar"></i> Sep 2023 – Nov 2023</span>
+                <span><i class="fas fa-user"></i> Individual Project</span>
+                <span><i class="fas fa-chart-bar"></i> Tableau + MySQL</span>
+                <span><i class="fas fa-bell"></i> Real-time Dashboard</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="container main-layout">
+        <!-- Main Content -->
+        <main class="project-content">
+            <!-- Overview Section -->
+            <section class="content-section">
+                <h2>Overview</h2>
+                <p>This project combined SQL data engineering with Tableau visualization to create a real-time fraud detection system. By analyzing 1.2M+ transactions, we developed automated anomaly detection queries and interactive dashboards that enable rapid identification and response to suspicious activity across multiple dimensions: time, geography, category, and customer behavior patterns.</p>
+            </section>
+
+            <!-- Process Steps -->
+            <section class="content-section">
+                <h2>Process & Methodology</h2>
+                <div class="process-grid">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h3>Data Ingestion</h3>
+                        <p>Loaded raw transaction CSV into MySQL, validated data quality, and resolved schema mismatches.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h3>Feature Engineering</h3>
+                        <p>Calculated distance between customer and merchant using Haversine formula, created time and amount buckets.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h3>Anomaly Queries</h3>
+                        <p>Identified transactions exceeding 3 standard deviations from mean; flagged cards with 10+ daily transactions.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <h3>Tableau Data Source</h3>
+                        <p>Created export views: daily summary, geo summary, and full enriched transaction table.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">5</div>
+                        <h3>Dashboard Build</h3>
+                        <p>Built 5 Tableau sheets: time series trends, category heatmap, geo map, KPI cards, and anomaly table.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">6</div>
+                        <h3>Interactivity</h3>
+                        <p>Added filters for date range, state, category, and fraud flag to enable deep-dive analysis.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Code Preview -->
+            <section class="content-section">
+                <h2>High-Risk Transaction Detection</h2>
+                <div class="code-preview">
+                    <div class="code-header">
+                        <span class="code-label">SQL</span>
+                        <button class="copy-btn" data-target="code-1">
+                            <i class="fas fa-copy"></i> Copy
+                        </button>
+                    </div>
+                    <pre id="code-1"><code class="language-sql">-- High-risk transaction detection
+SELECT transaction_id, trans_datetime,
+       merchant, category, amt,
+       distance_km, is_fraud
+FROM transactions_enriched
+WHERE amt > (
+    SELECT AVG(amt) + 3 * STDDEV(amt)
+    FROM transactions
+)
+ORDER BY amt DESC;</code></pre>
+                </div>
+            </section>
+
+            <!-- Key Results -->
+            <section class="content-section">
+                <h2>Key Results</h2>
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-number">5</div>
+                        <div class="result-label">Dashboard Views</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-number">1.2M+</div>
+                        <div class="result-label">Transactions Analyzed</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-number">360°</div>
+                        <div class="result-label">Fraud Analysis Coverage</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-number">6</div>
+                        <div class="result-label">SQL Prep Queries</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Sidebar -->
+        <aside class="project-sidebar">
+            <div class="sidebar-section">
+                <h3>Tech Stack</h3>
+                <ul class="tech-list">
+                    <li><i class="fas fa-tag"></i> Tableau Desktop</li>
+                    <li><i class="fas fa-tag"></i> MySQL</li>
+                    <li><i class="fas fa-tag"></i> SQL Views</li>
+                    <li><i class="fas fa-tag"></i> Haversine Formula</li>
+                    <li><i class="fas fa-tag"></i> Data Blending</li>
+                    <li><i class="fas fa-tag"></i> Standard Deviation</li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>Project Files</h3>
+                <a href="fraud_data_prep.sql" download class="github-btn">
+                    <i class="fas fa-download"></i> Download SQL
+                </a>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>GitHub</h3>
+                <a href="https://github.com/MarieFTS" target="_blank" class="github-btn">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
+            </div>
+
+            <div class="sidebar-section">
+                <a href="../../index.html" class="back-portfolio-btn">
+                    <i class="fas fa-arrow-left"></i> Back to Portfolio
+                </a>
+            </div>
+        </aside>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+
+        // Copy button functionality
+        document.querySelectorAll('.copy-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const codeId = this.getAttribute('data-target');
+                const codeElement = document.getElementById(codeId);
+                const text = codeElement.innerText;
+
+                navigator.clipboard.writeText(text).then(() => {
+                    const originalText = this.innerHTML;
+                    this.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                    this.classList.add('copied');
+
+                    setTimeout(() => {
+                        this.innerHTML = originalText;
+                        this.classList.remove('copied');
+                    }, 2000);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

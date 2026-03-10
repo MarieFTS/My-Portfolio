@@ -1,227 +1,437 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>My Portfolio</title>
-        <link rel="stylesheet" href="style.css">
-        <script src="https://kit.fontawesome.com/80b80b3f8b.js" crossorigin="anonymous"></script>
-    </head>
-    <body>
-        <div id="header">
-            <div class="parallax">
-             <div class="container">
-            <nav>
-                <img src="Images/logo2.png" class="logo">
-                <ul id="sidemenu">
-                    <li><a href="#header">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#Portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <i class="fa-solid fa-x" onclick="closemenu()"></i>
-                </ul>
-                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
-            </nav>
-            <div class="header-text">
-                <p>Data Analyst</p>
-                <h1>Hi, I'm <span> Marie </span> <br> Welcome to my Portfolio</h1>
-            </div>
-        </div>
-        </div>
-        <!-----about me page -------->
-        <div id="about">
-            <div class="parallax">
-            <div class="container">
-                <div class="row">
-                    <div class="about-col-1">
-                        <img src="Images/IMG_3726.png">
-                    </div>
-                    <div class="about-col-2">
-                        <h1>About Me</h1>
-                        <p> Motivated IT student with a specialization in data analysis, 
-                            seeking an internship opportunity as an IT Intern within tech companies. 
-                        </p>
-                        
-                      <div class="tab-titles">
-                            <P class="tab-links active-link" onclick="opentab('skills')">Skill</P>
-                            <P class="tab-links" onclick="opentab('experience')">Experience</P>
-                            <P class="tab-links" onclick="opentab('education')">Education</P>
-                        </div>
-                        <div class="tab-contents active-tab" id="skills">
-                            <ul>
-                                <li><span>Data Analysis</span><br>Working with SQL, Excel and Python</li>
-                                <li><span>Data Visualisation</span><br>Working with Tableau and Java</li>
-                                <li><span>Project Management</span><br>Comfortable with Microsoft office,<br>Good communication skills and Problem sloving skills</li>
-                                <li><span>Languages</span><br>Fluent in French and English</li>
-                            </ul>
-                        </div>
-                        <div class="tab-contents" id="experience">
-                            <ul>
-                                <li><span>English Tutor</span><br>Tutored students in English language skills,<br> including reading, writing, and speaking. 
-                                <br>mproved students' English proficiency and comprehension through one-on-one instruction.</li>
-                                <li><span>Orientation Leader</span><br>Facilitated orientation sessions for incoming students to help them acclimate to campus life.
-                                <br> Hence devoloping both leader and communication skills while creating a bond</li>
-        
-                            </ul>
-                        </div>
-                        <div class="tab-contents" id="education">
-                            <ul>
-                                <li><span>2020-2022</span><br>Middlesex Community College,<br> Lowell MA — Associates of Science in Computer Science </li>
-                                <li><span>2022-2024</span><br>Kennesaw State University,<br> Marietta GA — Bachelor of Science in Information Technology </li>
-                                <li><span>Relevant course work</span><br>- Data Analysis and Visualization
-                                    <br>- Database Management
-                                    <br>- Statistics for Data Science
-                                    <br>- Python Programming
-                                    <br>- SQL
-                                    
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> 
-        </div>
- <!--Portfolio page-->
- <div id="Portfolio">
-    <div class="parallax">
-    <div class="container">
-        <h1 > My Work </h1>
-        <div class="workList">
-            <div class="work">
-                <img src="Images/SQLlogo.png">
-                <div class="layer">
-                    <h3>SQL, Employee Data Analysis systems</h3>
-                    <p>This project involved designing and implementing a database
-                         system </p>
-                         <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </div>
-            </div>
-            <div class="work">
-                <img src="Images/Javalogo.png">
-                <div class="layer">
-                    <h3>Java , Data Analysis tool</h3>
-                    <p>Created a Java program that allows users to perform basic data analysis tasks on a dataset. </p>
-                         <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </div>
-            </div>
-            <div class="work">
-                <img src="Images/Pythonlogo.png">
-                <div class="layer">
-                    <h3>Python, Analyzing covid 19 Data. </h3>
-                    <p>The goal is to practice data manipulation, visualization, and analysis using Python libraries. </p>
-                         <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </div>
-            </div>
-             
-            <div class="work">
-                <img src="Images/excellogo.png">
-                <div class="layer">
-                    <h3>Excel, Buisness Requirement. </h3>
-                    <p>The goal is to practice data exploration, transfering data into excel, and Analysation. </p>
-                         <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </div>
-            </div>
-            <div class="work">
-                <img src="Images/Tableaulogo.png">
-                <div class="layer">
-                    <h3>Tableau, Social Media Engagement Dashboard. </h3>
-                    <p>TIntegrate data from social media platforms to analyze engagement metrics.
-                        Create visualizations for likes, shares, comments, and follower growth. </p>
-                         <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                </div>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marie Odile Fotso | Data Analyst</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/80b80b3f8b.js" crossorigin="anonymous"></script>
+</head>
+<body>
 
-                
-        <a href="#"class="button">See more</a>
+<!-- ===================== NAVBAR ===================== -->
+<nav id="navbar">
+    <div class="nav-container">
+        <img src="Images/logo2.png" class="logo" alt="Marie Logo">
+        <ul id="sidemenu">
+            <li><a href="#header"    onclick="closemenu()">Home</a></li>
+            <li><a href="#about"     onclick="closemenu()">About</a></li>
+            <li><a href="#portfolio" onclick="closemenu()">Portfolio</a></li>
+            <li><a href="#contact"   onclick="closemenu()">Contact</a></li>
+            <i class="fa-solid fa-xmark close-icon" onclick="closemenu()"></i>
+        </ul>
+        <i class="fa-solid fa-bars menu-icon" onclick="openmenu()"></i>
     </div>
- </div>
- </div>
+</nav>
 
-       
-<!--------------Contact ------------>
-<div id="contact">
-    <div class="parallax">
-    <div class="container">
-        <div class="row">
-            <div class="contact-left">
-                <h1>Contact Me</h1>
-                <p><i class="fa-regular fa-envelope"></i>Marieodilefotsoo@gmail.com</p>
-                <p><i class="fa-solid fa-phone"></i> 6174618675</p>
-                <div class="social-icon">
-                    <a href="https://facebook.com"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="https://twitter.com"><i class="fa-brands fa-twitter-square"></i></a>
-                    <a href="https://instagram.com"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://linkedin.com/in/marie-fotso-5b75a31a0"><i class="fa-brands fa-linkedin"></i></a>
-                
-                </div>
-              <a href="Marie Fotso - RESUME1 2x.pdf" download class="button button2">Download Resume</a>
+<!-- ===================== HERO ===================== -->
+<section id="header">
+    <div class="hero-overlay"></div>
+    <div class="hero-content fade-in">
+        <p class="hero-tag">
+            <i class="fa-solid fa-chart-line"></i> Data Analyst
+        </p>
+        <h1>Hi, I'm <span>Marie<br>Odile Fotso</span></h1>
+        <p class="hero-sub">
+            Turning complex data into clear, actionable insights.<br>
+            Bilingual · SQL · Python · Tableau · Excel
+        </p>
+        <div class="hero-btns">
+            <a href="#portfolio" class="btn btn-primary">View My Work</a>
+            <a href="#contact"   class="btn btn-outline">Get In Touch</a>
+        </div>
+        <div class="hero-links">
+            <a href="https://github.com/MarieFTS" target="_blank">
+                <i class="fa-brands fa-github"></i> GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/marie-fotso-5b75a31a0/" target="_blank">
+                <i class="fa-brands fa-linkedin"></i> LinkedIn
+            </a>
+        </div>
+    </div>
+
+    <!--
+        ============================================================
+        TO ADD YOUR PHOTO:
+        Save your BLUE-SHIRT headshot as:  Images/hero-headshot.png
+        ============================================================
+    -->
+    <div class="hero-image fade-in-right">
+        <div class="hero-img-wrapper">
+            <img src="Images/hero-headshot.jpg"
+                 alt="Marie Odile Fotso"
+                 onerror="this.closest('.hero-img-wrapper').style.display='none'">
+            <div class="hero-img-ring"></div>
+            <div class="hero-badge">
+                <i class="fa-solid fa-database"></i>
+                <span>Data Analyst</span>
             </div>
-            <div class="contact-right">
-                <form name="submit-to-google-sheet">
-                    <input type="text" name="Name" placeholder="Your Name" required>
-                    <input type="email" name="Email" placeholder="Your Email" required>
-                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
-                    <button type="submit" class="button button2">Submit</button>
+        </div>
+    </div>
+
+    <a href="#about" class="scroll-down" aria-label="Scroll down">
+        <i class="fa-solid fa-chevron-down"></i>
+    </a>
+</section>
+
+<!-- ===================== ABOUT ===================== -->
+<section id="about">
+    <div class="container">
+        <div class="section-title reveal">
+            <h2>About <span>Me</span></h2>
+            <div class="title-line"></div>
+        </div>
+
+        <div class="about-grid">
+            <!--
+                ============================================================
+                TO ADD YOUR PHOTO:
+                Save your YELLOW-SWEATER headshot as: Images/about-headshot.png
+                ============================================================
+            -->
+            <div class="about-img-col reveal">
+                <div class="about-img-frame">
+                    <img src="Images/about-headshot.jpg"
+                         alt="Marie Odile Fotso"
+                         onerror="this.src='Images/IMG_3726.png'">
+                    <div class="img-border-deco"></div>
+                </div>
+                <div class="about-quick-facts">
+                    <div class="fact">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Marietta, GA</span>
+                    </div>
+                    <div class="fact">
+                        <i class="fa-solid fa-language"></i>
+                        <span>English & French</span>
+                    </div>
+                    <div class="fact">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <span>B.S. Information Technology</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-text-col reveal">
+                <p class="about-bio">
+                    Data-focused analyst with strong experience in gathering, normalizing and
+                    visualizing data using <strong>SQL, Python, Excel</strong> and <strong>Tableau</strong>.
+                    Proven ability to compile reports, track trends and maintain data integrity —
+                    reduced ticket resolution time by 20% through streamlined documentation.
+                    Bilingual communicator adept at translating technical insights into actionable
+                    recommendations for stakeholders.
+                </p>
+
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                </div>
+
+                <!-- SKILLS TAB -->
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li>
+                            <span>Languages & Tools</span>
+                            Python · SQL · HTML · CSS · JavaScript · Tableau · Power BI · MySQL · Excel · Microsoft Office
+                        </li>
+                        <li>
+                            <span>Data & Analytics</span>
+                            Data Analysis · Data Normalization · Data Visualization · Workforce Analytics ·
+                            Reporting · Process Documentation · Cost Analysis
+                        </li>
+                        <li>
+                            <span>IT & Support</span>
+                            Ticketing Systems · Hardware/Software Installation · VPN Setup ·
+                            Active Directory · System Troubleshooting
+                        </li>
+                        <li>
+                            <span>Soft Skills</span>
+                            Bilingual (English & French) · Strong Communicator · Adaptable · Team-Oriented
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- EXPERIENCE TAB -->
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li>
+                            <span>IT Support · CyberMunk <em>— May 2024 – Present</em></span>
+                            Handled technical support for cybersecurity bootcamp participants; analyzed
+                            support trends and reduced resolution time by 20%. Set up VMs, troubleshot
+                            VPNs/firewalls, and created FAQ dashboards. Supported tools including
+                            Wireshark, Kali Linux, and Nessus.
+                        </li>
+                        <li>
+                            <span>IT Support Volunteer · Kennesaw State University <em>— Mar 2023 – May 2024</em></span>
+                            First point of contact for hardware/software troubleshooting. Logged support
+                            tickets, documented resolutions, and generated performance reports to drive
+                            process improvements.
+                        </li>
+                        <li>
+                            <span>Administrative & HR Assistant · Jamela Hair <em>— Oct 2022 – Jan 2023</em></span>
+                            Managed scheduling and customer records. Compiled and visualized reports for
+                            headcount, PTO, and engagement metrics in Excel and Tableau. Executed
+                            data entry, normalization, and cleanup tasks.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- EDUCATION TAB -->
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li>
+                            <span>Kennesaw State University <em>— Jan 2022 – May 2025</em></span>
+                            B.S. Information Technology with Data Analytics · Marietta, GA
+                        </li>
+                        <li>
+                            <span>Middlesex Community College <em>— Jan 2020 – Dec 2021</em></span>
+                            A.S. Computer Science · Lowell, MA
+                        </li>
+                        <li>
+                            <span>Relevant Coursework</span>
+                            Data Analysis & Visualization · Database Management ·
+                            Statistics for Data Science · Python Programming · SQL · Power BI
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== PORTFOLIO ===================== -->
+<section id="portfolio">
+    <div class="container">
+        <div class="section-title reveal">
+            <h2>My <span>Work</span></h2>
+            <div class="title-line"></div>
+            <p class="section-sub">Projects showcasing my data analysis and visualization skills</p>
+        </div>
+
+        <div class="work-grid">
+
+            <div class="work-card reveal">
+                <img src="Images/SQLlogo.png" alt="SQL Project">
+                <div class="work-overlay">
+                    <span class="work-tag">SQL · Jan – May 2023</span>
+                    <h3>Customer Segmentation Analysis</h3>
+                    <p>Led a team project analyzing retail customer data. Developed complex SQL queries
+                       to identify distinct segments based on purchasing behavior and demographics.</p>
+                    <a href="projects/sql-segmentation/index.html" class="work-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+
+            <div class="work-card reveal">
+                <img src="Images/Tableaulogo.png" alt="Tableau Project">
+                <div class="work-overlay">
+                    <span class="work-tag">Tableau · Sep – Nov 2023</span>
+                    <h3>Fraud Detection Dashboard</h3>
+                    <p>Designed and implemented a real-time fraud detection dashboard integrating data
+                       from multiple sources to monitor transaction patterns and flag anomalies.</p>
+                    <a href="projects/tableau-fraud/index.html" class="work-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+
+            <div class="work-card reveal">
+                <img src="Images/Pythonlogo.png" alt="Python Project">
+                <div class="work-overlay">
+                    <span class="work-tag">Python</span>
+                    <h3>COVID-19 Data Analysis</h3>
+                    <p>Practiced data manipulation, visualization, and statistical analysis using Python
+                       libraries such as Pandas, Matplotlib, and Seaborn.</p>
+                    <a href="projects/python-covid/index.html" class="work-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+
+            <div class="work-card reveal">
+                <img src="Images/excellogo.png" alt="Excel Project">
+                <div class="work-overlay">
+                    <span class="work-tag">Excel · Tableau</span>
+                    <h3>HR Analytics & Reporting</h3>
+                    <p>Compiled and visualized reports for headcount tracking, PTO logs, and team
+                       engagement metrics — supporting data-driven decisions in HR operations.</p>
+                    <a href="projects/excel-hr/index.html" class="work-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+
+            <div class="work-card reveal">
+                <img src="Images/Javalogo.png" alt="Java Project">
+                <div class="work-overlay">
+                    <span class="work-tag">Java</span>
+                    <h3>Java Data Analysis Tool</h3>
+                    <p>Built a Java program enabling users to perform basic data analysis tasks —
+                       including filtering, sorting, and summarizing structured datasets.</p>
+                    <a href="projects/java-tool/index.html" class="work-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+
+            <div class="work-card reveal">
+                <img src="Images/SQLlogo.png" alt="IT Support Project">
+                <div class="work-overlay">
+                    <span class="work-tag">Ticketing · Dashboards</span>
+                    <h3>IT Support Analytics Dashboard</h3>
+                    <p>Generated reporting dashboards in a ticketing system to streamline support
+                       processes — reducing ticket resolution time by 20% at CyberMunk.</p>
+                    <a href="projects/it-dashboard/index.html" class="work-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <a href="https://github.com/MarieFTS" target="_blank" class="btn btn-primary see-more reveal">
+            <i class="fa-brands fa-github"></i> See More on GitHub
+        </a>
+    </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section id="contact">
+    <div class="container">
+        <div class="section-title reveal">
+            <h2>Contact <span>Me</span></h2>
+            <div class="title-line"></div>
+            <p class="section-sub">Open to opportunities, collaborations, and conversations</p>
+        </div>
+
+        <div class="contact-grid">
+            <div class="contact-left reveal">
+                <h3>Let's Connect</h3>
+                <p>Whether it's a full-time role, internship, or project collaboration — feel free to reach out!</p>
+
+                <div class="contact-info">
+                    <a href="mailto:marieodilefotsoo@gmail.com" class="contact-item">
+                        <i class="fa-regular fa-envelope"></i>
+                        <span>marieodilefotsoo@gmail.com</span>
+                    </a>
+                    <a href="tel:6174618675" class="contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>(617) 461-8675</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/marie-fotso-5b75a31a0/" target="_blank" class="contact-item">
+                        <i class="fa-brands fa-linkedin"></i>
+                        <span>linkedin.com/in/marie-fotso</span>
+                    </a>
+                    <a href="https://github.com/MarieFTS" target="_blank" class="contact-item">
+                        <i class="fa-brands fa-github"></i>
+                        <span>github.com/MarieFTS</span>
+                    </a>
+                </div>
+
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/marie-fotso-5b75a31a0/" target="_blank" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/MarieFTS" target="_blank" aria-label="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+
+                <a href="Images/Marie_Fotso_Resume.pdf" download class="btn btn-primary resume-btn">
+                    <i class="fa-solid fa-download"></i> Download Resume
+                </a>
+            </div>
+
+            <div class="contact-right reveal">
+                <form name="submit-to-google-sheet" class="contact-form">
+                    <div class="form-group">
+                        <label>Your Name</label>
+                        <input type="text" name="Name" placeholder="Jane Smith" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Your Email</label>
+                        <input type="email" name="Email" placeholder="jane@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea name="Message" rows="5" placeholder="Hi Marie, I'd love to connect about..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary submit-btn">
+                        <span class="btn-text">Send Message</span>
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                    <span id="msg"></span>
                 </form>
-                <span id="msg"></span>
-            </div>            
-    <div class="copyright">
-        <p>Copyright © <i class="fa-solid fa-m fa-flip"></i>arie. MadeByMarie ClassProject</p>
+            </div>
+        </div>
     </div>
-</div>
-</div>
-        
-<script>
-   var tablinks = document.getElementsByClassName("tab-links");
-   var tabcontents = document.getElementsByClassName("tab-contents");
+</section>
 
+<!-- ===================== FOOTER ===================== -->
+<footer>
+    <p>© 2025 Marie Odile Fotso &nbsp;·&nbsp; Marietta, GA &nbsp;·&nbsp; Made with <i class="fa-solid fa-heart"></i></p>
+</footer>
 
-    function opentab(tabname){
-        for(tablink of tablinks){
-            tablink.classList.remove("active-link");
-        }
-        for(tabcontent of tabcontents){
-            tabcontent.classList.remove("active-tab");
-         }
-         event.currentTarget.classList.add("active-link")
-         document.getElementById(tabname).classList.add("active-tab")
-     }
-          
-</script>
+<!-- ===================== SCRIPTS ===================== -->
 <script>
-    var sidemeu = document.getElementById("sidemenu")
-    function openmenu(){
-        sidemeu.style.right = "0"
+    /* ---------- Tab switching ---------- */
+    const tablinks   = document.getElementsByClassName("tab-links");
+    const tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname) {
+        for (let link of tablinks)    link.classList.remove("active-link");
+        for (let tc   of tabcontents) tc.classList.remove("active-tab");
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
     }
-    function closemenu(){
-        sidemeu.style.right = "-200px"
-    }
-</script>
-<script>
+
+    /* ---------- Mobile menu ---------- */
+    const sidemenu = document.getElementById("sidemenu");
+    function openmenu()  { sidemenu.classList.add("open"); }
+    function closemenu() { sidemenu.classList.remove("open"); }
+
+    /* ---------- Navbar scroll effect ---------- */
+    window.addEventListener("scroll", () => {
+        document.getElementById("navbar")
+            .classList.toggle("scrolled", window.scrollY > 60);
+    });
+
+    /* ---------- Scroll-reveal (Intersection Observer) ---------- */
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => entry.target.classList.add("visible"), i * 80);
+            }
+        });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+
+    /* ---------- Contact form → Google Sheets ---------- */
     const scriptURL = 'https://script.google.com/macros/s/AKfycbwjVzkc_1pY3g0kPbZc2t-glffBgyn72iVdoXAdGQBAyV9-zT3d354U0qcKMnSPJL_N/exec';
     const form = document.forms['submit-to-google-sheet'];
-    const msg = document.getElementById("msg");
+    const msg  = document.getElementById("msg");
 
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
+        const btn = form.querySelector('.submit-btn');
+        btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending…';
+        btn.disabled = true;
         try {
             const response = await fetch(scriptURL, { method: 'POST', body: new FormData(form) });
             if (response.ok) {
-                msg.innerHTML = "Message sent successfully";
-                setTimeout(() => {
-                    msg.innerHTML = "";
-                }, 5000);
+                msg.textContent = "✓ Message sent! I'll be in touch soon.";
+                msg.className = "msg-success";
                 form.reset();
             } else {
-                throw new Error('Network response was not ok.');
+                throw new Error('Network error');
             }
-        } catch (error) {
-            console.error('Error!', error.message);
-            msg.innerHTML = "Error submitting the form. Please try again later.";
+        } catch (err) {
+            msg.textContent = "✗ Something went wrong. Please email me directly.";
+            msg.className = "msg-error";
+        } finally {
+            btn.innerHTML = '<span class="btn-text">Send Message</span><i class="fa-solid fa-paper-plane"></i>';
+            btn.disabled = false;
+            setTimeout(() => { msg.textContent = ""; msg.className = ""; }, 6000);
         }
     });
 </script>
-
-
 </body>
 </html>

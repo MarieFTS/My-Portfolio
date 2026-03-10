@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Support Analytics Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <link rel="stylesheet" href="../../project.css">
+    <script src="https://kit.fontawesome.com/80b80b3f8b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Sticky Navigation -->
+    <nav class="sticky-nav">
+        <div class="nav-container">
+            <a href="../../index.html" class="nav-back">
+                <i class="fas fa-arrow-left"></i> Back to Portfolio
+            </a>
+        </div>
+    </nav>
+
+    <!-- Project Hero -->
+    <section class="project-hero">
+        <div class="container">
+            <div class="hero-tags">
+                <span class="tag">SQL</span>
+                <span class="tag">Ticketing</span>
+                <span class="tag">IT Support</span>
+            </div>
+            <h1 class="hero-title">IT Support Analytics Dashboard</h1>
+            <p class="hero-subtitle">Built an IT support analytics system at CyberMunk to track ticket volume, resolution times, SLA compliance, and agent performance. Contributed to a 20% reduction in ticket resolution time through data-driven process improvements and FAQ-style documentation.</p>
+            <div class="hero-meta">
+                <span><i class="fas fa-calendar"></i> May 2024 – Present</span>
+                <span><i class="fas fa-building"></i> CyberMunk</span>
+                <span><i class="fas fa-database"></i> MySQL + Power BI</span>
+                <span><i class="fas fa-chart-line"></i> Live Dashboard</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="container main-layout">
+        <!-- Main Content -->
+        <main class="project-content">
+            <!-- Overview Section -->
+            <section class="content-section">
+                <h2>Overview</h2>
+                <p>This ongoing project at CyberMunk demonstrates how structured data analysis can drive operational improvements in IT support. By building comprehensive SQL views to track ticket metrics, SLA compliance, and agent performance, we identified process bottlenecks and patterns. The resulting dashboards in Power BI enabled management to make data-driven staffing decisions and prioritize FAQ documentation for the highest-impact issues, achieving a 20% reduction in resolution time.</p>
+            </section>
+
+            <!-- Process Steps -->
+            <section class="content-section">
+                <h2>Process & Methodology</h2>
+                <div class="process-grid">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h3>Schema Design</h3>
+                        <p>Created tickets and agents tables with ENUM priority/status fields and proper indexing.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h3>Core Metrics View</h3>
+                        <p>Computed resolution time in minutes/hours and SLA compliance flags per priority level.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h3>Resolution Analysis</h3>
+                        <p>Averaged resolution time by category and priority with SLA compliance percentage.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <h3>Monthly Trends</h3>
+                        <p>Used LAG() window function to track month-over-month resolution time improvements.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">5</div>
+                        <h3>Peak Volume Analysis</h3>
+                        <p>Identified busiest hours and days to optimize staffing schedules proactively.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">6</div>
+                        <h3>FAQ Documentation</h3>
+                        <p>Extracted top recurring categories to guide knowledge base and reduce repeat tickets.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Code Preview -->
+            <section class="content-section">
+                <h2>Monthly Trend Analysis with Window Functions</h2>
+                <div class="code-preview">
+                    <div class="code-header">
+                        <span class="code-label">SQL</span>
+                        <button class="copy-btn" data-target="code-1">
+                            <i class="fas fa-copy"></i> Copy
+                        </button>
+                    </div>
+                    <pre id="code-1"><code class="language-sql">-- Monthly trend with LAG() for MoM improvement
+SELECT
+    month,
+    COUNT(*) AS total_tickets,
+    ROUND(AVG(resolution_hours), 2) AS avg_resolution_hrs,
+    ROUND(AVG(resolution_hours)
+        - LAG(AVG(resolution_hours))
+          OVER (ORDER BY month), 2) AS mom_change_hrs
+FROM ticket_metrics
+GROUP BY month
+ORDER BY month;</code></pre>
+                </div>
+            </section>
+
+            <!-- Key Results -->
+            <section class="content-section">
+                <h2>Key Results</h2>
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-number">20%</div>
+                        <div class="result-label">Resolution Time Reduction</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-number">100%</div>
+                        <div class="result-label">SLA Compliance Tracked</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-number">∞</div>
+                        <div class="result-label">Agent Performance Ranked</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-number">24/7</div>
+                        <div class="result-label">Dashboard Live</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Sidebar -->
+        <aside class="project-sidebar">
+            <div class="sidebar-section">
+                <h3>Tech Stack</h3>
+                <ul class="tech-list">
+                    <li><i class="fas fa-tag"></i> MySQL</li>
+                    <li><i class="fas fa-tag"></i> Window Functions</li>
+                    <li><i class="fas fa-tag"></i> LAG / LEAD</li>
+                    <li><i class="fas fa-tag"></i> Stored Procedures</li>
+                    <li><i class="fas fa-tag"></i> Power BI</li>
+                    <li><i class="fas fa-tag"></i> ENUM Types</li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>Project Files</h3>
+                <a href="support_dashboard.sql" download class="github-btn">
+                    <i class="fas fa-download"></i> Download SQL
+                </a>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>GitHub</h3>
+                <a href="https://github.com/MarieFTS" target="_blank" class="github-btn">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
+            </div>
+
+            <div class="sidebar-section">
+                <a href="../../index.html" class="back-portfolio-btn">
+                    <i class="fas fa-arrow-left"></i> Back to Portfolio
+                </a>
+            </div>
+        </aside>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+
+        // Copy button functionality
+        document.querySelectorAll('.copy-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const codeId = this.getAttribute('data-target');
+                const codeElement = document.getElementById(codeId);
+                const text = codeElement.innerText;
+
+                navigator.clipboard.writeText(text).then(() => {
+                    const originalText = this.innerHTML;
+                    this.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                    this.classList.add('copied');
+
+                    setTimeout(() => {
+                        this.innerHTML = originalText;
+                        this.classList.remove('copied');
+                    }, 2000);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

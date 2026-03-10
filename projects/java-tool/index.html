@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Data Analysis Tool</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <link rel="stylesheet" href="../../project.css">
+    <script src="https://kit.fontawesome.com/80b80b3f8b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Sticky Navigation -->
+    <nav class="sticky-nav">
+        <div class="nav-container">
+            <a href="../../index.html" class="nav-back">
+                <i class="fas fa-arrow-left"></i> Back to Portfolio
+            </a>
+        </div>
+    </nav>
+
+    <!-- Project Hero -->
+    <section class="project-hero">
+        <div class="container">
+            <div class="hero-tags">
+                <span class="tag">Java</span>
+                <span class="tag">OOP</span>
+                <span class="tag">Data Processing</span>
+            </div>
+            <h1 class="hero-title">Java Data Analysis Tool</h1>
+            <p class="hero-subtitle">Built a command-line Java application that reads any CSV file and performs descriptive statistics, filtering, sorting, group-by aggregation, and ASCII bar chart visualization — no external libraries required.</p>
+            <div class="hero-meta">
+                <span><i class="fas fa-calendar"></i> Academic Project</span>
+                <span><i class="fas fa-user"></i> Individual Project</span>
+                <span><i class="fas fa-java"></i> Core Java</span>
+                <span><i class="fas fa-terminal"></i> CLI Tool</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="container main-layout">
+        <!-- Main Content -->
+        <main class="project-content">
+            <!-- Overview Section -->
+            <section class="content-section">
+                <h2>Overview</h2>
+                <p>This educational project demonstrates core Java competencies through a feature-rich CLI data analysis tool. Without relying on external libraries, the application handles CSV parsing, statistical computation, data manipulation, and visualization. The architecture showcases OOP principles including encapsulation, composition, and stream processing—all compiled to a single JAR file that works with any CSV dataset.</p>
+            </section>
+
+            <!-- Process Steps -->
+            <section class="content-section">
+                <h2>Process & Methodology</h2>
+                <div class="process-grid">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h3>CSV Parser</h3>
+                        <p>Built BufferedReader-based parser mapping column headers to row values with robust error handling.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h3>Row Model</h3>
+                        <p>Created inner class Row with get(column) and getDouble(column) helper methods for type safety.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h3>Descriptive Stats</h3>
+                        <p>Computed count, mean, std dev, min, Q1, median, Q3, max using sorted collections.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <h3>Frequency Analysis</h3>
+                        <p>Used Java Streams groupingBy() + counting() to rank categorical values by frequency.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">5</div>
+                        <h3>Filter & Sort</h3>
+                        <p>Implemented >, >=, <, <=, =, contains operators with numeric/string dispatch logic.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">6</div>
+                        <h3>Aggregate & Visualize</h3>
+                        <p>GroupBy with SUM/AVG/COUNT/MAX/MIN; ASCII bar charts scaled to terminal width.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Code Preview -->
+            <section class="content-section">
+                <h2>Descriptive Statistics Implementation</h2>
+                <div class="code-preview">
+                    <div class="code-header">
+                        <span class="code-label">Java</span>
+                        <button class="copy-btn" data-target="code-1">
+                            <i class="fas fa-copy"></i> Copy
+                        </button>
+                    </div>
+                    <pre id="code-1"><code class="language-java">// Descriptive statistics
+public void describe(String column) {
+    List<Double> nums = rows.stream()
+        .map(r -> r.getDouble(column))
+        .filter(v -> !Double.isNaN(v))
+        .sorted()
+        .collect(Collectors.toList());
+
+    double mean   = nums.stream()
+                        .mapToDouble(Double::doubleValue)
+                        .average().orElse(0);
+    double median = percentile(nums, 50);
+    double stddev = stdDev(nums, mean);
+
+    System.out.printf("Mean: %.2f | Median: %.2f | StdDev: %.2f%n",
+                      mean, median, stddev);
+}</code></pre>
+                </div>
+            </section>
+
+            <!-- Key Results -->
+            <section class="content-section">
+                <h2>Key Results</h2>
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-number">8</div>
+                        <div class="result-label">Analysis Functions</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-number">∞</div>
+                        <div class="result-label">CSV Files Supported</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-number">0</div>
+                        <div class="result-label">External Dependencies</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-number">1</div>
+                        <div class="result-label">JAR File</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Sidebar -->
+        <aside class="project-sidebar">
+            <div class="sidebar-section">
+                <h3>Tech Stack</h3>
+                <ul class="tech-list">
+                    <li><i class="fas fa-tag"></i> Java 17</li>
+                    <li><i class="fas fa-tag"></i> Streams API</li>
+                    <li><i class="fas fa-tag"></i> Collections</li>
+                    <li><i class="fas fa-tag"></i> BufferedReader</li>
+                    <li><i class="fas fa-tag"></i> OOP Design</li>
+                    <li><i class="fas fa-tag"></i> Lambda Expressions</li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>Project Files</h3>
+                <a href="DataAnalysisTool.java" download class="github-btn">
+                    <i class="fas fa-download"></i> Download Java
+                </a>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>GitHub</h3>
+                <a href="https://github.com/MarieFTS" target="_blank" class="github-btn">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
+            </div>
+
+            <div class="sidebar-section">
+                <a href="../../index.html" class="back-portfolio-btn">
+                    <i class="fas fa-arrow-left"></i> Back to Portfolio
+                </a>
+            </div>
+        </aside>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+
+        // Copy button functionality
+        document.querySelectorAll('.copy-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const codeId = this.getAttribute('data-target');
+                const codeElement = document.getElementById(codeId);
+                const text = codeElement.innerText;
+
+                navigator.clipboard.writeText(text).then(() => {
+                    const originalText = this.innerHTML;
+                    this.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                    this.classList.add('copied');
+
+                    setTimeout(() => {
+                        this.innerHTML = originalText;
+                        this.classList.remove('copied');
+                    }, 2000);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
